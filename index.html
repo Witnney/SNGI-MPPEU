@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Nacional de Gestión e Información Estadística Universitaria</title>
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Hoja de Estilos Independiente -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- Membrete Tricolor Venezolano con Degradado, Brillos y Estrellas -->
+    <header class="header-bandera text-center py-4">
+        <!--div class="stars-container mb-1">
+            <span>?</span><span>?</span><span>?</span><span>?</span><span>?</span><span>?</span><span>?</span><span>?</span>
+        </div-->
+        <h1 class="h3 font-weight-bold text-uppercase title-glow mb-1">REPÚBLICA BOLIVARIANA DE VENEZUELA</h1>
+        <p class="mb-1 text-sub-patrio fw-semibold">MINISTERIO DEL PODER POPULAR PARA LA EDUCACIÓN UNIVERSITARIA</p>
+        <div class="badge-sub-patrio d-inline-block px-3 py-1 rounded-pill mt-1 fw-bold">
+            SISTEMA NACIONAL DE GESTIÓN E INFORMACIÓN ESTADÍSTICA UNIVERSITARIA &bull; LEY DE INTEROPERABILIDAD
+        </div>
+    </header>
+
+    <!-- Barra de Estado de Interoperabilidad -->
+    <div class="container-fluid bg-dark text-white py-2 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <span class="small"><i class="bi bi-diagram-3-fill text-warning me-2"></i> Ingesta No Relacional (NoSQL): <strong class="text-success">Conectado / Bus de Eventos Activo</strong></span>
+            <span class="small"><i class="bi bi-shield-lock-fill text-info me-2"></i> Marco Normativo: <strong class="text-light">Ley de Infogobierno & Función Pública Estadística</strong></span>
+        </div>
+    </div>
+
+    <div class="container-my-4">
+        
+        <!-- Menú Navegable por Pestañas (6 Módulos Activos) -->
+        <div class="card card-custom p-3 mb-4">
+            <h6 class="text-uppercase fw-bold text-muted mb-3 border-bottom pb-2">Módulos del Sistema</h6>
+            <ul class="nav nav-pills flex-wrap justify-content-center" id="moduleTabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="tab-academico" data-bs-toggle="pill" data-bs-target="#mod-academico" type="button" role="tab">
+                        <i class="bi bi-journal-bookmark-fill me-2"></i> 1. Control de Estudios
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="tab-nomina" data-bs-toggle="pill" data-bs-target="#mod-nomina" type="button" role="tab">
+                        <i class="bi bi-people-fill me-2"></i> 2. Talento Humano
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="tab-planificacion" data-bs-toggle="pill" data-bs-target="#mod-planificacion" type="button" role="tab">
+                        <i class="bi bi-calculator-fill me-2"></i> 3. Planificación & Costos
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="tab-infraestructura" data-bs-toggle="pill" data-bs-target="#mod-infraestructura" type="button" role="tab">
+                        <i class="bi bi-building-fill-gear me-2"></i> 4. Planta Física & Sísmica
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="tab-bienes" data-bs-toggle="pill" data-bs-target="#mod-bienes" type="button" role="tab">
+                        <i class="bi bi-box-seam-fill me-2"></i> 5. Bienes y Servicios
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="tab-api" data-bs-toggle="pill" data-bs-target="#mod-api" type="button" role="tab">
+                        <i class="bi bi-cpu-fill me-2"></i> 6. Ingesta NoSQL / APIs
+                    </button>
+                </li>                         
+                             
+                              
+            </ul>
+        </div>
+
+
+
+
+
+    <!--div class="container my-4"-->
+        <div class="row justify-content-center">
+            <!-- Menú Navegable de Módulos Estratégicos -->
+            <!--div class="col-lg-3 mb-4">
+                <div class="card card-custom p-3">
+                    <h6 class="text-uppercase fw-bold text-muted mb-3 border-bottom pb-2">Módulos del Sistema</h6>
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active" id="tab-academico" data-bs-toggle="pill" data-bs-target="#mod-academico" type="button" role="tab">
+                            <i class="bi bi-journal-bookmark-fill me-2"></i> 1. Control de Estudios
+                        </button>
+                        <button class="nav-link" id="tab-nomina" data-bs-toggle="pill" data-bs-target="#mod-nomina" type="button" role="tab">
+                            <i class="bi bi-people-fill me-2"></i> 2. Talento Humano
+                        </button>
+                        <button class="nav-link" id="tab-planificacion" data-bs-toggle="pill" data-bs-target="#mod-planificacion" type="button" role="tab">
+                            <i class="bi bi-calculator-fill me-2"></i> 3. Planificación & Costos
+                        </button>
+                        <button class="nav-link" id="tab-infraestructura" data-bs-toggle="pill" data-bs-target="#mod-infraestructura" type="button" role="tab">
+                            <i class="bi bi-building-fill-gear me-2"></i> 4. Planta Física & Sísmica
+                        </button>
+                        <button class="nav-link" id="tab-bienes" data-bs-toggle="pill" data-bs-target="#mod-bienes" type="button" role="tab">
+                            <i class="bi bi-box-seam-fill me-2"></i> 5. Bienes y Servicios
+                        </button>
+                        <button class="nav-link" id="tab-api" data-bs-toggle="pill" data-bs-target="#mod-api" type="button" role="tab">
+                            <i class="bi bi-cpu-fill me-2"></i> 6. Ingesta NoSQL / APIs
+                        </button>
+                    </div>
+                </div>
+            </div-->
+          
+            <!-- Contenido Dinámico de Módulos -->
+            <div class="col-lg-9 mb-4 justify-content-center">
+                <div class="tab-content" id="v-pills-tabContent">
+                    
+                    <!-- Modulo 1: Control de Estudios -->
+                    <div class="tab-pane fade show active" id="mod-academico" role="tabpanel">
+                        <div class="card card-custom p-4">
+                            <h5 class="module-title border-bottom pb-2"><i class="bi bi-journal-check text-blue"></i> Módulo 1: Sistemas de Control de Estudios y Movilidad Estudiantil</h5>
+                            <p class="text-muted small">Carga agregada o extracción automatizada de matrícula, inscritos y egresados para facilitar la movilidad estudiantil y políticas públicas de prosecución.</p>
+                            
+                            <form id="formAcademico" class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Institución de Educación Universitaria (IEU)</label>
+                                    <select class="form-select" id="ieuSelect" required>
+                                        <option value="" disabled selected>Seleccione IEU...</option>
+                                        <option value="UNEXCA">UNEXCA - Univ. Nac. Exp. de la Gran Caracas</option>
+                                        <option value="UCV">UCV - Universidad Central de Venezuela</option>
+                                        <option value="UBV">UBV - Universidad Bolivariana de Venezuela</option>
+                                        <option value="UMBV">UMBV - Univ. Militar Bolivariana de Venezuela</option>
+                                        <option value="UNETRANS">UNETRANS - Univ. Nac. Exp. del Transporte</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Matrícula Activa Total</label>
+                                    <input type="number" class="form-control" id="matriculaInput" placeholder="Ej. 12500" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Nivel de Digitalización</label>
+                                    <select class="form-select" id="digitalizacionSelect" required>
+                                        <option value="Total">Totalmente Digitalizado</option>
+                                        <option value="Parcial">Parcialmente Digitalizado</option>
+                                        <option value="Manual">Manual / En Físico</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 text-end mt-3">
+                                    <button type="submit" class="btn btn-patrio-primary"><i class="bi bi-cloud-upload"></i> Sincronizar Ficha Académica</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 2: Personal y Nómina -->
+                    <div class="tab-pane fade" id="mod-nomina" role="tabpanel">
+                        <div class="card card-custom p-4">
+                            <h5 class="module-title border-bottom pb-2"><i class="bi bi-people-fill text-blue"></i> Módulo 2: Personal, Carga Docente Efectiva y Maqueta Salarial</h5>
+                            <p class="text-muted small">Sinceración de nóminas y dedicación real en aula/laboratorio para garantizar la eficiencia presupuestaria.</p>
+                            <form id="formNomina" class="row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label">Personal Docente Activo en Aula</label>
+                                    <input type="number" class="form-control" id="docentesActivos" placeholder="Cantidad presencial" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Régimen de Dedicación</label>
+                                    <select class="form-select" id="dedicacionSelect">
+                                        <option value="Exclusiva">Dedicación Exclusiva</option>
+                                        <option value="TiempoCompleto">Tiempo Completo</option>
+                                        <option value="MedioTiempo">Medio Tiempo</option>
+                                        <option value="Convencional">Tiempo Convencional</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Conciliación Sistema Patria</label>
+                                    <select class="form-select" id="patriaSelect">
+                                        <option value="Sincronizado">100% Sincronizado</option>
+                                        <option value="Pendiente">Inconsistencia Detectada</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 text-end mt-3">
+                                    <button type="submit" class="btn btn-patrio-primary"><i class="bi bi-shield-check"></i> Validar Talento Humano</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 3: Planificación & Costos -->
+                    <div class="tab-pane fade" id="mod-planificacion" role="tabpanel">
+                        <div class="card card-custom p-4">
+                            <h5 class="module-title border-bottom pb-2"><i class="bi bi-calculator-fill text-blue"></i> Módulo 3: Planificación, Presupuesto e Indicadores Costo-Calidad</h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-light rounded border text-center">
+                                        <span class="text-muted d-block mb-1">Costo Estimado Promedio por Estudiante / Año</span>
+                                        <h3 class="fw-bold text-dark mb-0">$ 420,00 USD</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-light rounded border text-center">
+                                        <span class="text-muted d-block mb-1">Eficiencia de Ejecución Presupuestaria</span>
+                                        <h3 class="fw-bold text-success mb-0">94.2 %</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 4: Planta Física -->
+                    <div class="tab-pane fade" id="mod-infraestructura" role="tabpanel">
+                        <div class="card card-custom p-4">
+                            <h5 class="module-title border-bottom pb-2"><i class="bi bi-building-fill-gear text-blue"></i> Módulo 4: Planta Física, Aulas y Semáforo Sísmico</h5>
+                            <p class="text-muted small">Catastro de edificaciones y semáforo de habitabilidad para la atención prioritaria de obras.</p>
+                            <div class="row g-3">
+                                <div class="col-md-4 text-center">
+                                    <div class="p-3 border rounded bg-success text-white">
+                                        <h6 class="mb-0">Habitable (Verde)</h6>
+                                        <h2 class="fw-bold my-2">53</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="p-3 border rounded bg-warning text-dark">
+                                        <h6 class="mb-0">Daño Intermedio (Amarillo)</h6>
+                                        <h2 class="fw-bold my-2">43</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="p-3 border rounded bg-danger text-white">
+                                        <h6 class="mb-0">Crítico / Inhabitable (Rojo)</h6>
+                                        <h2 class="fw-bold my-2">17</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 5: Bienes y Servicios -->
+                    <div class="tab-pane fade" id="mod-bienes" role="tabpanel">
+                        <div class="card card-custom p-4">
+                            <h5 class="module-title border-bottom pb-2"><i class="bi bi-box-seam-fill text-blue"></i> Módulo 5: Inventario de Bienes y Servicios Compartidos</h5>
+                            <p class="text-muted small">Catastro de laboratorios y equipamiento disponible para uso interuniversitario territorial.</p>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped align-middle">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Recurso / Equipo</th>
+                                            <th>IEU Propietaria</th>
+                                            <th>Capacidad</th>
+                                            <th>Estado</th>
+                                            <th>Uso Compartido</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Laboratorio de Mecatrónica</td>
+                                            <td>UNEXCA (La Floresta)</td>
+                                            <td>35 Puestos</td>
+                                            <td><span class="badge bg-success">100% Operativo</span></td>
+                                            <td><span class="badge bg-primary">Habilitado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Servidor Data Center Proxmox</td>
+                                            <td>UBV (Sede Central)</td>
+                                            <td>64 Cores / 256GB RAM</td>
+                                            <td><span class="badge bg-success">En Servicio</span></td>
+                                            <td><span class="badge bg-info">Interoperable</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 6: Ingesta NoSQL / APIs -->
+                    <div class="tab-pane fade" id="mod-api" role="tabpanel">
+                        <div class="card card-custom p-4">
+                            <h5 class="module-title border-bottom pb-2"><i class="bi bi-cpu-fill text-blue"></i> Módulo 6: Ingesta NoSQL & Consola JSON (Interoperabilidad)</h5>
+                            <p class="text-muted small">Visualización del documento no relacional estandarizado y extraído desde el sistema local de la IEU.</p>
+                            <div class="bg-dark text-success p-3 rounded code-container">
+                                <pre id="jsonPreview"><code>{
+  "Sistema_Nacional": "SNGIEU-2026",
+  "IEU_ID": "VE-UNEXCA-2026",
+  "Fecha_Corte": "2026-10-07T11:45:00Z",
+  "Ley_Interoperabilidad": true,
+  "Payload_Academico": {
+    "Matricula_Activa": 12500,
+    "Programas_PNF": 14,
+    "Egresados_Ultimo_Ciclo": 850
+  },
+  "Soberania_Datos": {
+    "Motor_BD": "NoSQL / JSON Document",
+    "Alojamiento": "Infraestructura Nacional"
+  }
+}</code></pre>
+                            </div>
+                            <div class="text-end mt-3">
+                                <button class="btn btn-outline-warning" onclick="copiarJSON()"><i class="bi bi-clipboard"></i> Copiar Payload JSON</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script Logico Independiente -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
